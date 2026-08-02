@@ -1,4 +1,4 @@
-﻿@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=Oswald:wght@400;500;600;700&display=swap");
+﻿@import url("https://fonts.googleapis.com/css2?family=Russo+One&display=swap");
 
 :root {
   --metro-amber: #c7802f;
@@ -27,7 +27,7 @@ body {
 
 body {
   position: relative;
-  font-family: "IBM Plex Sans", sans-serif;
+  font-family: "Russo One", sans-serif;
   color: var(--ink);
   background:
     radial-gradient(circle at 20% 18%, rgba(199, 128, 47, 0.12), transparent 28%),
@@ -107,9 +107,7 @@ body::after {
   -webkit-overflow-scrolling: touch;
   overscroll-behavior-y: contain;
   scrollbar-width: none;
-  box-shadow:
-    0 24px 64px rgba(0, 0, 0, 0.58),
-    inset 0 0 0 1px rgba(255, 255, 255, 0.03);
+  box-shadow: 0 24px 64px rgba(0, 0, 0, 0.58);
 }
 
 .panel-wrap::-webkit-scrollbar {
@@ -156,14 +154,6 @@ body::after {
   will-change: transform, opacity;
 }
 
-.panel-wrap::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  border-top: 4px solid var(--metro-amber);
-  pointer-events: none;
-}
-
 .panel {
   position: absolute;
   inset: 0;
@@ -189,7 +179,7 @@ body::after {
 
 .issü-line,
 .comic-chip {
-  font-family: "Oswald", sans-serif;
+  font-family: "Russo One", sans-serif;
   letter-spacing: 0.18em;
   color: var(--metro-amber);
   font-size: clamp(0.88rem, 1.8vw, 1.08rem);
@@ -203,7 +193,7 @@ body::after {
 
 h1,
 h2 {
-  font-family: "Oswald", sans-serif;
+  font-family: "Russo One", sans-serif;
   letter-spacing: 0.06em;
   line-height: 0.95;
   text-transform: uppercase;
