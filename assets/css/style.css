@@ -89,10 +89,7 @@ body {
 }
 
 .scrollbar-overlay {
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
+  position: fixed;
   width: 14px;
   padding: 6px 3px;
   opacity: 0;

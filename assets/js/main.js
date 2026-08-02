@@ -5,6 +5,7 @@ const scrollbarOverlay = document.querySelector(".scrollbar-overlay");
 const scrollbarThumb = document.querySelector(".scrollbar-thumb");
 let scrollbarHideTimeout;
 let refreshScrollbar = () => {};
+let syncScrollbarOverlay = () => {};
 
 function showPanel(targetName) {
 	panels.forEach((panel) => {
@@ -59,13 +60,26 @@ if (panelWrap) {
 
 		const overlayRect = scrollbarOverlay.getBoundingClientRect();
 		const trackHeight = overlayRect.height - 12;
-		const thumbHeight = Math.max(72, Math.min(140, Math.round(trackHeight * 0.22)));
+		const contentRatio = panelWrap.clientHeight / activePanel.scrollHeight;
+		const thumbHeight = Math.max(48, Math.min(110, Math.round(trackHeight * contentRatio * 0.16)));
 		const thumbTravel = Math.max(0, trackHeight - thumbHeight);
 		const thumbTop = clamp((panelWrap.scrollTop / scrollableHeight) * thumbTravel, 0, thumbTravel);
 
 		scrollbarThumb.style.height = `${thumbHeight}px`;
 		scrollbarThumb.style.transform = `translateY(${thumbTop}px)`;
 		setScrollbarVisible(true);
+	};
+
+	syncScrollbarOverlay = () => {
+		if (!scrollbarOverlay) {
+			return;
+		}
+
+		const panelRect = panelWrap.getBoundingClientRect();
+		scrollbarOverlay.style.top = `${panelRect.top}px`;
+		scrollbarOverlay.style.left = `${panelRect.right - 14}px`;
+		scrollbarOverlay.style.width = `14px`;
+		scrollbarOverlay.style.height = `${panelRect.height}px`;
 	};
 
 	const hideScrollbar = () => {
@@ -77,6 +91,7 @@ if (panelWrap) {
 	};
 
 	const showScrollbarTemporarily = () => {
+		syncScrollbarOverlay();
 		refreshScrollbar();
 		window.clearTimeout(scrollbarHideTimeout);
 		scrollbarHideTimeout = window.setTimeout(() => {
@@ -88,9 +103,11 @@ if (panelWrap) {
 	panelWrap.addEventListener("pointerenter", showScrollbarTemporarily);
 	panelWrap.addEventListener("pointerleave", hideScrollbar);
 	window.addEventListener("resize", refreshScrollbar);
+	window.addEventListener("resize", syncScrollbarOverlay);
 	document.querySelectorAll(".panel-wrap img").forEach((image) => {
 		image.addEventListener("load", refreshScrollbar, { passive: true });
 	});
+	syncScrollbarOverlay();
 	refreshScrollbar();
 	hideScrollbar();
 }
