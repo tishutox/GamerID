@@ -1,4 +1,4 @@
-﻿@import url("https://fonts.googleapis.com/css2?family=Russo+One&display=swap");
+﻿@import url("https://fonts.googleapis.com/css2?family=Mochiy+Pop+One&display=swap");
 
 :root {
   --metro-amber: #c7802f;
@@ -27,7 +27,7 @@ body {
 
 body {
   position: relative;
-  font-family: "Russo One", sans-serif;
+  font-family: "Mochiy Pop One", sans-serif;
   color: var(--ink);
   background:
     radial-gradient(circle at 20% 18%, rgba(199, 128, 47, 0.12), transparent 28%),
@@ -179,7 +179,7 @@ body::after {
 
 .issü-line,
 .comic-chip {
-  font-family: "Russo One", sans-serif;
+  font-family: "Mochiy Pop One", sans-serif;
   letter-spacing: 0.18em;
   color: var(--metro-amber);
   font-size: clamp(0.88rem, 1.8vw, 1.08rem);
@@ -193,14 +193,14 @@ body::after {
 
 h1,
 h2 {
-  font-family: "Russo One", sans-serif;
+  font-family: "Mochiy Pop One", sans-serif;
   letter-spacing: 0.06em;
   line-height: 0.95;
   text-transform: uppercase;
 }
 
 h1 {
-  font-size: clamp(2.4rem, 8vw, 5.1rem);
+  font-size: clamp(2rem, 6vw, 3.7rem);
   color: #f4ede3;
   text-shadow: 0 0 14px rgba(199, 128, 47, 0.08);
 }
@@ -212,9 +212,8 @@ h2 {
 
 .name {
   color: var(--ink-dim);
-  text-transform: uppercase;
-  letter-spacing: 0.14em;
-  font-weight: 600;
+  font-size: 1rem;
+  font-weight: 400;
 }
 
 .hero-images {
