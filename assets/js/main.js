@@ -3,9 +3,109 @@ const panels = document.querySelectorAll(".panel");
 const panelWrap = document.querySelector(".panel-wrap");
 const scrollbarOverlay = document.querySelector(".scrollbar-overlay");
 const scrollbarThumb = document.querySelector(".scrollbar-thumb");
+const specListItems = document.querySelectorAll(".spec-list li");
 let scrollbarHideTimeout;
 let refreshScrollbar = () => {};
 let syncScrollbarOverlay = () => {};
+
+function initializeSpecAccordions() {
+	const normalizeSpecKey = (value) => {
+		return value
+			.toLowerCase()
+			.replace(/ä/g, "ae")
+			.replace(/ö/g, "oe")
+			.replace(/ü/g, "ue")
+			.replace(/ß/g, "ss")
+			.replace(/[^a-z0-9]+/g, "-")
+			.replace(/(^-|-$)/g, "");
+	};
+
+	const detailCopy = {
+		case: "Form factor, airflow and component space are the key focus points.",
+		cpu: "Core count, clock speed and efficiency drive gaming and multitasking performance.",
+		mainboard: "Socket compatibility, ports and upgrade options define the platform.",
+		gpu: "VRAM, power profile and cooling determine high resolution performance.",
+		ram: "Capacity and speed help keep games and background tasks smooth.",
+		"cpu-cooler": "Acoustics and thermal behavior keep boost clocks stable under load.",
+		"case-cooler": "Front-to-back airflow helps prevent heat buildup during long sessions.",
+		ssd: "Fast read and write rates noticeably reduce loading times.",
+		"power-supply": "Efficiency and power headroom ensure stable operation.",
+		keyboard:
+			"Rapid Trigger and Hall Effect switches enable very fast reset and actuation points for competitive play.",
+		mouse: "Sensor precision, weight and grip shape your control.",
+		controller: "Ergonomics, trigger feel and latency impact gameplay.",
+		monitor: "Panel type, refresh rate and response time define visual clarity.",
+		headset: "Positional audio, comfort and tonal balance matter in long sessions.",
+		mikrofon: "Pickup pattern and clarity improve voice communication.",
+		"stream-deck": "Macro keys and scene controls cut down repetitive actions."
+	};
+
+	specListItems.forEach((item, index) => {
+		const specMeta = item.querySelector(".spec-meta");
+		const specValue = item.querySelector("strong");
+
+		if (!specMeta || !specValue) {
+			return;
+		}
+
+		item.classList.add("spec-item");
+
+		const row = document.createElement("div");
+		row.className = "spec-row";
+
+		const right = document.createElement("div");
+		right.className = "spec-right";
+
+		specValue.classList.add("spec-value");
+		const productName = specValue.textContent.trim();
+		right.append(specValue);
+
+		const toggle = document.createElement("button");
+		toggle.type = "button";
+		toggle.className = "spec-toggle";
+		toggle.setAttribute("aria-expanded", "false");
+
+		const detailsId = `spec-details-${index + 1}`;
+		toggle.setAttribute("aria-controls", detailsId);
+		toggle.setAttribute("aria-label", "Zusatzinformationen anzeigen");
+		toggle.innerHTML = '<i data-lucide="chevron-up" aria-hidden="true"></i>';
+
+		right.append(toggle);
+		row.append(specMeta, right);
+
+		const titleText = specMeta.textContent.replace(/\s+/g, " ").trim();
+		const titleKey = normalizeSpecKey(titleText);
+		const details = document.createElement("div");
+		details.className = "spec-details";
+		details.id = detailsId;
+
+		const detailsTitle = document.createElement("p");
+		detailsTitle.className = "spec-details-title";
+		detailsTitle.textContent = productName;
+
+		const detailsBody = document.createElement("p");
+		detailsBody.className = "spec-details-body";
+		detailsBody.textContent = detailCopy[titleKey] || `${titleText}: Weitere Produktdetails folgen.`;
+
+		details.append(detailsTitle, detailsBody);
+
+		item.textContent = "";
+		item.append(row, details);
+
+		toggle.addEventListener("click", () => {
+			const isOpen = item.classList.toggle("is-open");
+			toggle.setAttribute("aria-expanded", String(isOpen));
+			toggle.setAttribute(
+				"aria-label",
+				isOpen ? "Zusatzinformationen ausblenden" : "Zusatzinformationen anzeigen"
+			);
+			syncScrollbarOverlay();
+			refreshScrollbar();
+		});
+	});
+}
+
+initializeSpecAccordions();
 
 function showPanel(targetName) {
 	panels.forEach((panel) => {

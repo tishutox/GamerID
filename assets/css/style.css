@@ -265,9 +265,95 @@ h2 {
 }
 
 .spec-list li {
+  display: block;
+}
+
+.spec-item {
+  display: grid;
+  gap: 0.55rem;
+}
+
+.spec-row {
   display: flex;
   justify-content: space-between;
+  align-items: flex-start;
   gap: 1rem;
+}
+
+.spec-right {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+}
+
+.spec-value {
+  color: #f4ede2;
+}
+
+.spec-toggle {
+  border: 1px solid rgba(199, 128, 47, 0.3);
+  background: rgba(21, 25, 21, 0.8);
+  color: var(--metro-amber);
+  width: 30px;
+  height: 30px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: border-color 120ms ease, background 120ms ease;
+}
+
+.spec-toggle:hover,
+.spec-toggle:focus-visible {
+  border-color: rgba(199, 128, 47, 0.7);
+  background: rgba(34, 40, 34, 0.95);
+}
+
+.spec-toggle svg {
+  width: 16px;
+  height: 16px;
+  stroke-width: 2.25;
+  transform: rotate(0deg);
+  transition: transform 220ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.spec-item.is-open .spec-toggle svg {
+  transform: rotate(180deg);
+}
+
+.spec-details {
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  color: #d8d0bf;
+  font-size: 0.86rem;
+  line-height: 1.45;
+  letter-spacing: 0.01em;
+  transition: max-height 260ms ease, opacity 180ms ease;
+}
+
+.spec-details-title {
+  display: inline-block;
+  color: #fff8ea;
+  font-size: 0.84rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 0.45rem;
+  padding: 0.18rem 0.5rem;
+  border-radius: 999px;
+  border: 1px solid rgba(199, 128, 47, 0.55);
+  background: linear-gradient(180deg, rgba(199, 128, 47, 0.24), rgba(199, 128, 47, 0.08));
+  box-shadow: 0 0 10px rgba(199, 128, 47, 0.14);
+}
+
+.spec-details-body {
+  margin: 0;
+}
+
+.spec-item.is-open .spec-details {
+  max-height: 7rem;
+  opacity: 1;
 }
 
 .spec-list span {
@@ -377,6 +463,14 @@ h2 {
 
   .comic-card {
     font-size: 0.93rem;
+  }
+
+  .spec-value {
+    display: none;
+  }
+
+  .spec-right {
+    gap: 0.3rem;
   }
 
   .social-nav {
