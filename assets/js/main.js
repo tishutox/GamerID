@@ -31,7 +31,7 @@ function initializeSpecAccordions() {
 		ssd: "Fast read and write rates noticeably reduce loading times.",
 		"power-supply": "Efficiency and power headroom ensure stable operation.",
 		keyboard:
-			"Rapid Trigger and Hall Effect switches enable very fast reset and actuation points for competitive play.",
+			"60% gaming keyboard with True 8K polling and around 0.125 ms input speed. Hall-effect control supports Rapid Trigger and adjustable actuation with 0.1 mm precision. The Lekker Tikken switch offers 4 mm travel with a deeper, muted sound profile. Available with ABS or aluminium case, FR4 plate and durable PBT keycaps. Wootility adds deep tuning, Tachyon mode and up to four onboard profiles.",
 		mouse: "Sensor precision, weight and grip shape your control.",
 		controller: "Ergonomics, trigger feel and latency impact gameplay.",
 		monitor: "Panel type, refresh rate and response time define visual clarity.",
