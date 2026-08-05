@@ -227,6 +227,7 @@ h2 {
 .hero-images img {
   width: 100%;
   height: clamp(120px, 23vh, 250px);
+  border-radius: 12px;
   object-fit: cover;
   border: 1px solid rgba(199, 128, 47, 0.26);
   filter: grayscale(1) sepia(0.2) contrast(1.05) brightness(0.82);
@@ -239,6 +240,7 @@ h2 {
   background:
     linear-gradient(180deg, rgba(255, 255, 255, 0.02), transparent 18%),
     linear-gradient(150deg, var(--metro-panel), var(--metro-panel-soft));
+  border-radius: 12px;
   border: 1px solid rgba(199, 128, 47, 0.24);
   padding: 0.85rem 0.95rem;
   display: grid;
@@ -448,10 +450,6 @@ h2 {
     -webkit-overflow-scrolling: touch;
     overscroll-behavior-y: contain;
     padding-bottom: 1rem;
-  }
-
-  .issü-line {
-    font-size: 0.98rem;
   }
 
   .hero-images {

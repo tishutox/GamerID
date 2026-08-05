@@ -24,7 +24,7 @@ function initializeSpecAccordions() {
 		case: "Form factor, airflow and component space are the key focus points.",
 		cpu: "Core count, clock speed and efficiency drive gaming and multitasking performance.",
 		mainboard: "Socket compatibility, ports and upgrade options define the platform.",
-		gpu: "VRAM, power profile and cooling determine high resolution performance.",
+		"graphic-card": "VRAM, power profile and cooling determine high resolution performance.",
 		ram: "Capacity and speed help keep games and background tasks smooth.",
 		"cpu-cooler": "Acoustics and thermal behavior keep boost clocks stable under load.",
 		"case-cooler": "Front-to-back airflow helps prevent heat buildup during long sessions.",
@@ -36,7 +36,7 @@ function initializeSpecAccordions() {
 		controller: "Ergonomics, trigger feel and latency impact gameplay.",
 		monitor: "Panel type, refresh rate and response time define visual clarity.",
 		headset: "Positional audio, comfort and tonal balance matter in long sessions.",
-		mikrofon: "Pickup pattern and clarity improve voice communication.",
+		microphone: "Pickup pattern and clarity improve voice communication.",
 		"stream-deck": "Macro keys and scene controls cut down repetitive actions."
 	};
 
