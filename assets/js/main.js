@@ -68,7 +68,7 @@ function initializeSpecAccordions() {
 		const detailsId = `spec-details-${index + 1}`;
 		toggle.setAttribute("aria-controls", detailsId);
 		toggle.setAttribute("aria-label", "Zusatzinformationen anzeigen");
-		toggle.innerHTML = '<i data-lucide="chevron-up" aria-hidden="true"></i>';
+		toggle.innerHTML = '<i data-lucide="chevron-down" aria-hidden="true"></i>';
 
 		right.append(toggle);
 		row.append(specMeta, right);

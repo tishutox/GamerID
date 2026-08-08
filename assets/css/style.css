@@ -1,15 +1,17 @@
-﻿@import url("https://fonts.googleapis.com/css2?family=Mochiy+Pop+One&display=swap");
+﻿@import url("https://fonts.googleapis.com/css2?family=Playwrite+France+Moderne:wght@100..700&display=swap");
 
 :root {
-  --metro-amber: #c7802f;
-  --metro-amber-dark: #7e4d24;
-  --metro-olive: #66735f;
-  --metro-surface: #101311;
-  --metro-panel: rgba(15, 18, 16, 0.94);
-  --metro-panel-soft: rgba(23, 27, 23, 0.9);
-  --ink: #f2efe6;
-  --ink-dim: #b8b1a2;
-  --stroke: rgba(199, 128, 47, 0.34);
+  --metro-amber: #a63c43;
+  --metro-amber-dark: #6d1e2e;
+  --metro-olive: #5f4b3b;
+  --metro-surface: #140d0f;
+  --metro-panel: rgba(22, 10, 13, 0.95);
+  --metro-panel-soft: rgba(40, 18, 24, 0.9);
+  --ink: #f6ebdd;
+  --ink-dim: #c8b29d;
+  --stroke: rgba(166, 60, 67, 0.35);
+  --rose-glow: rgba(255, 173, 158, 0.2);
+  --cream-haze: #f3e2c9;
 }
 
 * {
@@ -27,13 +29,13 @@ body {
 
 body {
   position: relative;
-  font-family: "Mochiy Pop One", sans-serif;
+  font-family: "Playwrite France Moderne", cursive;
   color: var(--ink);
   background:
-    radial-gradient(circle at 20% 18%, rgba(199, 128, 47, 0.12), transparent 28%),
-    radial-gradient(circle at 74% 24%, rgba(102, 115, 95, 0.12), transparent 32%),
-    radial-gradient(circle at 50% 110%, rgba(0, 0, 0, 0.45), transparent 48%),
-    linear-gradient(145deg, #080909 0%, #0b0d0b 34%, #111513 58%, #070807 100%);
+    radial-gradient(circle at 18% 16%, rgba(166, 60, 67, 0.24), transparent 28%),
+    radial-gradient(circle at 78% 24%, rgba(255, 184, 154, 0.16), transparent 30%),
+    radial-gradient(circle at 50% 110%, rgba(0, 0, 0, 0.46), transparent 48%),
+    linear-gradient(145deg, #0a0607 0%, #140c0f 34%, #1c1216 58%, #090506 100%);
 }
 
 body::before,
@@ -55,9 +57,9 @@ body::before {
 
 body::after {
   background:
-    radial-gradient(circle at 25% 20%, rgba(255, 159, 64, 0.08), transparent 18%),
-    radial-gradient(circle at 80% 65%, rgba(117, 138, 107, 0.07), transparent 20%),
-    linear-gradient(180deg, transparent 0%, rgba(0, 0, 0, 0.16) 100%);
+    radial-gradient(circle at 25% 20%, rgba(255, 184, 154, 0.1), transparent 18%),
+    radial-gradient(circle at 80% 65%, rgba(166, 60, 67, 0.12), transparent 20%),
+    linear-gradient(180deg, transparent 0%, rgba(0, 0, 0, 0.18) 100%);
   filter: blur(1px);
 }
 
@@ -70,8 +72,8 @@ body::after {
 
 .bg-energy {
   background:
-    radial-gradient(circle at 78% 24%, rgba(199, 128, 47, 0.18), transparent 38%),
-    radial-gradient(circle at 24% 80%, rgba(102, 115, 95, 0.14), transparent 44%);
+    radial-gradient(circle at 78% 24%, rgba(166, 60, 67, 0.24), transparent 38%),
+    radial-gradient(circle at 24% 80%, rgba(255, 176, 148, 0.16), transparent 44%);
   filter: blur(16px);
 }
 
@@ -99,10 +101,10 @@ body::after {
   width: min(1020px, 96vw);
   height: min(76vh, 730px);
   border-radius: 14px;
-  border: 1px solid rgba(199, 128, 47, 0.38);
+  border: 1px solid rgba(166, 60, 67, 0.42);
   background:
-    linear-gradient(180deg, rgba(255, 255, 255, 0.03), transparent 12%),
-    linear-gradient(145deg, rgba(14, 16, 14, 0.96), rgba(8, 9, 8, 0.98));
+    linear-gradient(180deg, rgba(255, 255, 255, 0.04), transparent 12%),
+    linear-gradient(145deg, rgba(20, 11, 14, 0.96), rgba(10, 7, 8, 0.98));
   overflow-y: auto;
   overflow-x: hidden;
   -webkit-overflow-scrolling: touch;
@@ -180,10 +182,11 @@ body::after {
 
 .issü-line,
 .comic-chip {
-  font-family: "Mochiy Pop One", sans-serif;
+  font-family: "Playwrite France Moderne", cursive;
   letter-spacing: 0.18em;
   color: var(--metro-amber);
   font-size: clamp(0.88rem, 1.8vw, 1.08rem);
+  text-shadow: 0 0 10px rgba(166, 60, 67, 0.15);
 }
 
 .issü-line {
@@ -194,7 +197,7 @@ body::after {
 
 h1,
 h2 {
-  font-family: "Mochiy Pop One", sans-serif;
+  font-family: "Playwrite France Moderne", cursive;
   letter-spacing: 0.06em;
   line-height: 0.95;
   text-transform: uppercase;
@@ -202,8 +205,8 @@ h2 {
 
 h1 {
   font-size: clamp(2rem, 6vw, 3.7rem);
-  color: #f4ede3;
-  text-shadow: 0 0 14px rgba(199, 128, 47, 0.08);
+  color: var(--cream-haze);
+  text-shadow: 0 0 16px rgba(166, 60, 67, 0.14);
 }
 
 h2 {
@@ -241,7 +244,7 @@ h2 {
     linear-gradient(180deg, rgba(255, 255, 255, 0.02), transparent 18%),
     linear-gradient(150deg, var(--metro-panel), var(--metro-panel-soft));
   border-radius: 12px;
-  border: 1px solid rgba(199, 128, 47, 0.24);
+  border: 1px solid rgba(166, 60, 67, 0.26);
   padding: 0.85rem 0.95rem;
   display: grid;
   gap: 0.55rem;
@@ -344,9 +347,9 @@ h2 {
   margin-bottom: 0.45rem;
   padding: 0.18rem 0.5rem;
   border-radius: 999px;
-  border: 1px solid rgba(199, 128, 47, 0.55);
-  background: linear-gradient(180deg, rgba(199, 128, 47, 0.24), rgba(199, 128, 47, 0.08));
-  box-shadow: 0 0 10px rgba(199, 128, 47, 0.14);
+  border: 1px solid rgba(166, 60, 67, 0.55);
+  background: linear-gradient(180deg, rgba(166, 60, 67, 0.24), rgba(166, 60, 67, 0.08));
+  box-shadow: 0 0 10px rgba(166, 60, 67, 0.16);
 }
 
 .spec-details-body {
@@ -398,8 +401,9 @@ h2 {
   width: min(1020px, 96vw);
   margin-top: 0.65rem;
   border-radius: 12px;
-  border: 1px solid rgba(199, 128, 47, 0.34);
+  border: 1px solid rgba(166, 60, 67, 0.36);
   overflow: hidden;
+  box-shadow: 0 10px 24px rgba(10, 7, 8, 0.25);
 }
 
 .nav-item {
@@ -428,7 +432,7 @@ h2 {
 }
 
 .nav-item.is-active {
-  box-shadow: inset 0 -4px 0 var(--metro-amber), inset 0 0 0 1px rgba(199, 128, 47, 0.28);
+  box-shadow: inset 0 -4px 0 var(--metro-amber), inset 0 0 0 1px rgba(166, 60, 67, 0.28);
   color: #ffffff;
 }
 
